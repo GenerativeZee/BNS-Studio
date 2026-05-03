@@ -6,27 +6,62 @@
     <title>Process | BNS Studio</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        .process-section {
+            background-color: var(--color-text);
+            color: var(--color-bg);
+            padding-top: 180px;
+            padding-bottom: 180px;
+            margin-top: -120px; /* offset the main padding to hit the top */
+        }
+        .process-header {
+            text-align: center;
+            margin-bottom: 120px;
+        }
         .process-step {
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 40px;
-            padding: 80px 0;
-            border-bottom: 1px solid var(--color-border);
+            position: relative;
+            padding: 120px 0;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(248, 246, 240, 0.05);
         }
-        .step-num {
-            font-family: 'Outfit', sans-serif;
-            font-size: 5rem;
-            line-height: 0.8;
-            opacity: 0.1;
+        .process-step:last-child {
+            border-bottom: none;
         }
-        @media (max-width: 768px) {
-            .process-step {
-                grid-template-columns: 1fr;
-                padding: 40px 0;
-            }
-            .step-num {
-                font-size: 3rem;
-            }
+        .step-num-bg {
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            transform: translateY(-50%);
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(10rem, 25vw, 25rem);
+            color: var(--color-bg);
+            opacity: 0.03;
+            z-index: 0;
+            pointer-events: none;
+            font-style: italic;
+        }
+        .process-step:nth-child(even) .step-num-bg {
+            left: auto;
+            right: 5%;
+        }
+        .step-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin-left: auto;
+        }
+        .process-step:nth-child(even) .step-content {
+            margin-left: 0;
+            margin-right: auto;
+        }
+        .step-meta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--color-accent);
+            margin-bottom: 20px;
+            display: block;
         }
     </style>
 </head>
@@ -46,47 +81,56 @@
     </nav>
 
     <main style="padding-top: 120px;">
-        <section class="section-padding">
+        <section class="process-section">
             <div class="container">
-                <div class="reveal">
-                    <h4 style="text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.4; margin-bottom: 20px;">The Journey</h4>
-                    <h1 class="text-title" style="margin-bottom: 80px;">Our Design Process</h1>
+                <div class="reveal process-header">
+                    <h4 style="text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.4; margin-bottom: 20px; font-family: 'Inter', sans-serif;">The Journey</h4>
+                    <h1 class="text-title">Our <i>Design Process</i></h1>
+                </div>
+                
+                <div class="process-list">
+                    <div class="process-step reveal">
+                        <div class="step-num-bg">01</div>
+                        <div class="step-content">
+                            <span class="step-meta">Phase 01</span>
+                            <h3 style="font-size: 3rem; margin-bottom: 30px; font-family: 'Playfair Display', serif;">Understanding</h3>
+                            <p style="opacity: 0.7; font-size: 1.2rem; line-height: 1.8; font-weight: 300;">We begin by completely immersing ourselves in the client's requirements, lifestyle, and vision. This initial phase is about listening deeply and defining the structural and emotional parameters of the project.</p>
+                        </div>
+                    </div>
                     
-                    <div class="process-list">
-                        <div class="process-step reveal">
-                            <div class="step-num">01</div>
-                            <div>
-                                <h3 style="font-size: 2rem; margin-bottom: 20px;">Understanding</h3>
-                                <p class="text-body-large">We begin by understanding client requirements, lifestyle, and vision. This phase is about listening and defining the parameters of the project.</p>
-                            </div>
+                    <div class="process-step reveal">
+                        <div class="step-num-bg">02</div>
+                        <div class="step-content">
+                            <span class="step-meta">Phase 02</span>
+                            <h3 style="font-size: 3rem; margin-bottom: 30px; font-family: 'Playfair Display', serif;">Concept</h3>
+                            <p style="opacity: 0.7; font-size: 1.2rem; line-height: 1.8; font-weight: 300;">We translate abstract ideas into tangible layouts and initial design concepts. We explore spatial flow, light mapping, and structural possibilities to discover the optimal aesthetic direction.</p>
                         </div>
-                        <div class="process-step reveal">
-                            <div class="step-num">02</div>
-                            <div>
-                                <h3 style="font-size: 2rem; margin-bottom: 20px;">Concept Development</h3>
-                                <p class="text-body-large">We translate ideas into layouts and initial design concepts. We explore spatial flow and structural possibilities.</p>
-                            </div>
+                    </div>
+                    
+                    <div class="process-step reveal">
+                        <div class="step-num-bg">03</div>
+                        <div class="step-content">
+                            <span class="step-meta">Phase 03</span>
+                            <h3 style="font-size: 3rem; margin-bottom: 30px; font-family: 'Playfair Display', serif;">Detailing</h3>
+                            <p style="opacity: 0.7; font-size: 1.2rem; line-height: 1.8; font-weight: 300;">Detailed architectural drawings, exotic material selection, and rigorous technical planning. Every junction and surface is specified for absolute precision before a single brick is laid.</p>
                         </div>
-                        <div class="process-step reveal">
-                            <div class="step-num">03</div>
-                            <div>
-                                <h3 style="font-size: 2rem; margin-bottom: 20px;">Design Detailing</h3>
-                                <p class="text-body-large">Detailed drawings, material selection, and technical planning. Every junction and surface is specified for precision.</p>
-                            </div>
+                    </div>
+                    
+                    <div class="process-step reveal">
+                        <div class="step-num-bg">04</div>
+                        <div class="step-content">
+                            <span class="step-meta">Phase 04</span>
+                            <h3 style="font-size: 3rem; margin-bottom: 30px; font-family: 'Playfair Display', serif;">Execution</h3>
+                            <p style="opacity: 0.7; font-size: 1.2rem; line-height: 1.8; font-weight: 300;">Flawless on-site coordination and implementation. Our project managers ensure that the craftsmanship matches the uncompromising quality of the original design.</p>
                         </div>
-                        <div class="process-step reveal">
-                            <div class="step-num">04</div>
-                            <div>
-                                <h3 style="font-size: 2rem; margin-bottom: 20px;">Execution</h3>
-                                <p class="text-body-large">On-site coordination and implementation with attention to detail. We ensure the craft matches the design.</p>
-                            </div>
-                        </div>
-                        <div class="process-step reveal">
-                            <div class="step-num">05</div>
-                            <div>
-                                <h3 style="font-size: 2rem; margin-bottom: 20px;">Delivery</h3>
-                                <p class="text-body-large">Ensuring the final space aligns with the design vision. We handover a space that is ready for life.</p>
-                            </div>
+                    </div>
+                    
+                    <div class="process-step reveal">
+                        <div class="step-num-bg">05</div>
+                        <div class="step-content">
+                            <span class="step-meta">Phase 05</span>
+                            <h3 style="font-size: 3rem; margin-bottom: 30px; font-family: 'Playfair Display', serif;">Delivery</h3>
+                            <p style="opacity: 0.7; font-size: 1.2rem; line-height: 1.8; font-weight: 300;">A meticulous final review ensuring the space perfectly aligns with the design vision. We hand over a bespoke environment that is instantly ready for life.</p>
                         </div>
                     </div>
                 </div>

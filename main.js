@@ -1,13 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Navbar scroll effect
     const nav = document.querySelector('nav');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            nav.classList.add('scrolled');
+    const hasHero = document.querySelector('.hero');
+    
+    const handleScroll = () => {
+        if (hasHero) {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
         } else {
-            nav.classList.remove('scrolled');
+            nav.classList.add('scrolled');
         }
-    });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Run once on load
 
     // Reveal animations on scroll
     const revealElements = document.querySelectorAll('.reveal');
