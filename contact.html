@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | BNS Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="scrolled">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">BNS Studio</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="process.html">Process</a>
+                <a href="contact.html" class="active">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main style="padding-top: 120px;">
+        <section class="section-padding">
+            <div class="container">
+                <div class="reveal" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                    <h1 class="text-title" style="margin-bottom: 20px;">Start Your Project</h1>
+                    <p class="text-body-large" style="margin-bottom: 80px; opacity: 0.7;">We’d love to hear about your project. Whether you’re planning a new space or redesigning an existing one, connect with us to begin the process.</p>
+                    
+                    <form class="contact-form" action="#" method="POST">
+                        <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                            <div>
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div>
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="project-type">Project Type</label>
+                            <select id="project-type" name="project-type">
+                                <option value="residential">Residential</option>
+                                <option value="commercial">Commercial</option>
+                                <option value="interior">Interior Design</option>
+                                <option value="turnkey">Turnkey Solution</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Send Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding" style="border-top: 1px solid var(--color-border);">
+            <div class="container">
+                <div class="reveal" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; text-align: center;">
+                    <div>
+                        <h4 style="text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.4; margin-bottom: 15px;">Email</h4>
+                        <p>hello@bnsstudio.com</p>
+                    </div>
+                    <div>
+                        <h4 style="text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.4; margin-bottom: 15px;">Phone</h4>
+                        <p>+91 98765 43210</p>
+                    </div>
+                    <div>
+                        <h4 style="text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.4; margin-bottom: 15px;">Studio</h4>
+                        <p>A-12, Design District, New Delhi, India</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">BNS Studio</div>
+                    <p class="footer-tagline">Designing spaces with clarity, precision, and purpose.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Explore</h4>
+                        <ul>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="process.html">Process</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 80px; opacity: 0.3; font-size: 0.8rem;">
+                © 2024 BNS Studio. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
